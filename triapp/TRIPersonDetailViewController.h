@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TRIPerson.h"
 
 @interface TRIPersonDetailViewController : UITableViewController
+
+@property (nonatomic) TRIPerson *person;
 
 @end

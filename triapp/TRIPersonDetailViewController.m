@@ -7,10 +7,12 @@
 //
 
 #import "TRIPersonDetailViewController.h"
+#import "TRIPerson.h"
 
 @interface TRIPersonDetailViewController ()
 
 @property (nonatomic) NSArray *cellLayout;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
 
@@ -23,23 +25,44 @@
     
     _cellLayout = @[
                     @{@"header":@"Date of birth",  @"text":@"5/7/1987 (age 28)"},
-                    @{@"header":@"Sex",  @"text":@"Male"},
-                    @{@"header":@"Height",  @"text":@"184cm"},
-                    @{@"header":@"Weight", @"text":@"65kg"},
-                    @{@"header":@"Reported conditions", @"text":@"None"},
-                    @{@"header":@"Past conditions", @"text":@"Diarrhoea"},
+                    @{@"header":@"Sex",  @"text":self.person.sex},
+                    @{@"header":@"Height",  @"text":self.person.height},
+                    @{@"header":@"Weight", @"text":self.person.weight},
+                    @{@"header":@"Reported conditions", @"text":self.person.reportedConditions},
+                    @{@"header":@"Past conditions", @"text":self.person.pastConditions},
                     ];
-    
+    self.nameLabel.text = self.person.name;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *bleButton = [[UIBarButtonItem alloc] initWithTitle:@"." style:UIBarButtonItemStylePlain target:self action:@selector(bleFake)];
+    self.navigationItem.rightBarButtonItem = bleButton;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)bleFake {
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Welcome to XXX medical centre"
+                                  message:@"Lorem ipsum dolor sit amit"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    [alert addAction:ok];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+
+    NSLog(@"ble");
 }
 
 #pragma mark - Table view data source

@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.nameLabel.text = self.name;
-    self.imageView.image = self.profilePicture;
+    self.nameLabel.text = self.person.name;
+    self.imageView.image = [UIImage imageNamed:@"128.jpg"];
     // Do any additional setup after loading the view.
 }
 
@@ -29,14 +29,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setName:(NSString *)name {
-    _name = name;
-    self.nameLabel.text = name;
-}
-
-- (void)setProfilePicture:(UIImage *)profilePicture {
-    _profilePicture = profilePicture;
-    self.imageView.image = profilePicture;
+- (void)setPerson:(TRIPerson *)person {
+    _person = person;
+    self.nameLabel.text = self.person.name;
+    self.imageView.image = [UIImage imageNamed:@"128.jpg"];
 }
 
 /*

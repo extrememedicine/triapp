@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TRIPerson.h"
 @interface TRIPersonPreviewViewController : UIViewController
 
-@property (nonatomic) UIImage *profilePicture;
-@property (nonatomic) NSString *name;
+@property (nonatomic) TRIPerson *person;
 
 @end

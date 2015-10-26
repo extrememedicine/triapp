@@ -8,12 +8,16 @@
 
 #import "ViewController.h"
 #import "TRIPersonPreviewViewController.h"
+#import "TRIPersonDetailViewController.h"
 #import <Parse/Parse.h>
 #import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIView *containerViewB;
+
+@property (nonatomic) NSMutableArray *containerVCs;
 
 @end
 
@@ -22,20 +26,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSLog(@"%@", self.containerView);
-    self.containerView.layer.cornerRadius = 5;
-    self.containerView.layer.masksToBounds = YES;
     
+    NSArray *containers = @[self.containerView, self.containerViewB];
     
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentPersonDetail)];
-    singleTap.numberOfTapsRequired = 1;
-    [self.containerView addGestureRecognizer:singleTap];
+    for (UIView* containerView in containers) {
+        containerView.layer.cornerRadius = 5;
+        containerView.layer.masksToBounds = YES;
+        
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentPersonDetail:)];
+        singleTap.numberOfTapsRequired = 1;
+        [containerView addGestureRecognizer:singleTap];
+    }
     
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)presentPersonDetail {
-    [self performSegueWithIdentifier:@"showPerson" sender:nil];
+- (void)presentPersonDetail: (UIGestureRecognizer*)gesture {
+    __block TRIPersonPreviewViewController *destVC = nil;
+    [self.containerVCs enumerateObjectsUsingBlock:^(TRIPersonPreviewViewController *obj, NSUInteger idx, BOOL *stop) {
+        if (obj.view == gesture.view) {
+            *stop = YES;
+            destVC = obj;
+        }
+    }];
+
+    destVC = _containerVCs[0];
+    
+    [self performSegueWithIdentifier:@"showPerson" sender:destVC.person];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,10 +61,23 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (self.containerVCs == nil) {
+        self.containerVCs = [NSMutableArray array];
+    }
     if ([segue.identifier isEqualToString:@"embedPicture"]) {
         TRIPersonPreviewViewController *destVC = (TRIPersonPreviewViewController*)segue.destinationViewController;
-        destVC.profilePicture = [UIImage imageNamed:@"128.jpg"];
-        destVC.name = @"John Doe";
+        [self.containerVCs addObject:destVC];
+        TRIPerson *person = [TRIPerson object];
+        person.name = @"dat Harry Doe";
+        person.sex = @"Male";
+        person.height = @"184cm";
+        person.weight = @"65kg";
+        person.reportedConditions = @"None";
+        person.pastConditions = @"Diarrhoea";
+        destVC.person = person;
+    } else if ([segue.identifier isEqualToString:@"showPerson"]) {
+        TRIPersonDetailViewController *destVC = (TRIPersonDetailViewController*)segue.destinationViewController;
+        destVC.person = sender;
     }
 }
 

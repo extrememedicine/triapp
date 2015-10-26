@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="triapp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCm-bR-dae">
-                                <rect key="frame" x="204" y="28" width="193" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="triapp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCm-bR-dae">
+                                <rect key="frame" x="204" y="72" width="193" height="44"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="GKd-dJ-Xqq"/>
@@ -38,8 +38,8 @@
                                 </constraints>
                                 <state key="normal" title="Add a person"/>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54U-DV-bcf">
-                                <rect key="frame" x="20" y="80" width="140" height="180"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54U-DV-bcf">
+                                <rect key="frame" x="20" y="124" width="140" height="180"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="0dq-pb-5Bd"/>
@@ -50,14 +50,25 @@
                                     <segue destination="kz0-ZP-9M7" kind="embed" identifier="embedPicture" id="IcB-1a-wUC"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggV-gM-WwH">
+                                <rect key="frame" x="440" y="124" width="140" height="180"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="bAO-oc-CSz"/>
+                                    <constraint firstAttribute="height" constant="180" id="rj1-NX-jnP"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="vLX-r1-0Ix"/>
+                                </constraints>
+                            </containerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="54U-DV-bcf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3Rj-5g-mNU"/>
+                            <constraint firstItem="ggV-gM-WwH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6VI-bT-dMJ"/>
                             <constraint firstItem="40t-9Q-231" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6iI-IZ-qG8"/>
                             <constraint firstItem="54U-DV-bcf" firstAttribute="top" secondItem="fCm-bR-dae" secondAttribute="bottom" constant="8" id="IFQ-ND-vAU"/>
                             <constraint firstItem="fCm-bR-dae" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MXY-lD-a6B"/>
+                            <constraint firstItem="ggV-gM-WwH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="Qt5-N6-Y8b"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="40t-9Q-231" secondAttribute="bottom" constant="20" id="Vbh-WZ-kO6"/>
                             <constraint firstItem="fCm-bR-dae" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="oUH-uP-liV"/>
                         </constraints>
@@ -65,6 +76,7 @@
                     <navigationItem key="navigationItem" id="5Rn-Ts-rIn"/>
                     <connections>
                         <outlet property="containerView" destination="54U-DV-bcf" id="w8f-I0-O42"/>
+                        <outlet property="containerViewB" destination="ggV-gM-WwH" id="sNC-Sq-6yR"/>
                         <segue destination="Wvo-dQ-2LR" kind="show" identifier="showPerson" id="Fmr-Is-Uey"/>
                     </connections>
                 </viewController>
@@ -231,8 +243,8 @@ Doe</string>
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJQ-BD-2UF">
-                                            <rect key="frame" x="18" y="128.5" width="574" height="63"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJQ-BD-2UF">
+                                            <rect key="frame" x="18" y="135.5" width="574" height="56"/>
                                             <animations/>
                                             <attributedString key="attributedText">
                                                 <fragment>
@@ -247,8 +259,8 @@ Doe</string>
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" misplaced="YES" text="Recent log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yh-ex-NiB">
-                                            <rect key="frame" x="18" y="8" width="574" height="120.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="Recent log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yh-ex-NiB">
+                                            <rect key="frame" x="18" y="8" width="574" height="127.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -278,6 +290,9 @@ Doe</string>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1000"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="iyA-aX-vkv" id="Kus-bq-aXp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ujo-3Q-d3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
