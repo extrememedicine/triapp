@@ -14,6 +14,9 @@
 		4AA690651BDE2DCC0036CFD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA690631BDE2DCC0036CFD9 /* Main.storyboard */; };
 		4AA690671BDE2DCC0036CFD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA690661BDE2DCC0036CFD9 /* Assets.xcassets */; };
 		4AA6906A1BDE2DCC0036CFD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA690681BDE2DCC0036CFD9 /* LaunchScreen.storyboard */; };
+		4AA690781BDE35DE0036CFD9 /* 128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4AA690771BDE35DE0036CFD9 /* 128.jpg */; };
+		4AA6907B1BDE38A00036CFD9 /* TRIPersonPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA6907A1BDE38A00036CFD9 /* TRIPersonPreviewViewController.m */; };
+		4AA6907D1BDE3C4F0036CFD9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA6907C1BDE3C4F0036CFD9 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,10 @@
 		4AA690661BDE2DCC0036CFD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AA690691BDE2DCC0036CFD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AA6906B1BDE2DCC0036CFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AA690771BDE35DE0036CFD9 /* 128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 128.jpg; sourceTree = "<group>"; };
+		4AA690791BDE38A00036CFD9 /* TRIPersonPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRIPersonPreviewViewController.h; sourceTree = "<group>"; };
+		4AA6907A1BDE38A00036CFD9 /* TRIPersonPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRIPersonPreviewViewController.m; sourceTree = "<group>"; };
+		4AA6907C1BDE3C4F0036CFD9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		65369D046A308247A349069B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F9A54DE69B3B0E2659A9401E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA6907D1BDE3C4F0036CFD9 /* QuartzCore.framework in Frameworks */,
 				2DE2764036CE3402B35CA105 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +82,8 @@
 		4AA690591BDE2DCC0036CFD9 /* triapp */ = {
 			isa = PBXGroup;
 			children = (
+				4AA690791BDE38A00036CFD9 /* TRIPersonPreviewViewController.h */,
+				4AA6907A1BDE38A00036CFD9 /* TRIPersonPreviewViewController.m */,
 				4AA6905D1BDE2DCC0036CFD9 /* AppDelegate.h */,
 				4AA6905E1BDE2DCC0036CFD9 /* AppDelegate.m */,
 				4AA690601BDE2DCC0036CFD9 /* ViewController.h */,
@@ -90,6 +100,7 @@
 		4AA6905A1BDE2DCC0036CFD9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4AA690771BDE35DE0036CFD9 /* 128.jpg */,
 				4AA6905B1BDE2DCC0036CFD9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -98,6 +109,7 @@
 		A06A13EA436A47C25D0B3A52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AA6907C1BDE3C4F0036CFD9 /* QuartzCore.framework */,
 				030F70F9372E88B1E6657CA5 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -163,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AA6906A1BDE2DCC0036CFD9 /* LaunchScreen.storyboard in Resources */,
+				4AA690781BDE35DE0036CFD9 /* 128.jpg in Resources */,
 				4AA690671BDE2DCC0036CFD9 /* Assets.xcassets in Resources */,
 				4AA690651BDE2DCC0036CFD9 /* Main.storyboard in Resources */,
 			);
@@ -208,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA6907B1BDE38A00036CFD9 /* TRIPersonPreviewViewController.m in Sources */,
 				4AA690621BDE2DCC0036CFD9 /* ViewController.m in Sources */,
 				4AA6905F1BDE2DCC0036CFD9 /* AppDelegate.m in Sources */,
 				4AA6905C1BDE2DCC0036CFD9 /* main.m in Sources */,

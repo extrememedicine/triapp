@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -37,20 +38,81 @@
                                 </constraints>
                                 <state key="normal" title="Add a person"/>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54U-DV-bcf">
+                                <rect key="frame" x="20" y="80" width="140" height="180"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="0dq-pb-5Bd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="DQW-OD-aKW"/>
+                                    <constraint firstAttribute="height" constant="180" id="erO-0I-tJe"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="kz0-ZP-9M7" kind="embed" identifier="embedPicture" id="IcB-1a-wUC"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="54U-DV-bcf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3Rj-5g-mNU"/>
                             <constraint firstItem="40t-9Q-231" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6iI-IZ-qG8"/>
+                            <constraint firstItem="54U-DV-bcf" firstAttribute="top" secondItem="fCm-bR-dae" secondAttribute="bottom" constant="8" id="IFQ-ND-vAU"/>
                             <constraint firstItem="fCm-bR-dae" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MXY-lD-a6B"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="40t-9Q-231" secondAttribute="bottom" constant="20" id="Vbh-WZ-kO6"/>
                             <constraint firstItem="fCm-bR-dae" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="oUH-uP-liV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="54U-DV-bcf" id="w8f-I0-O42"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="307" y="399"/>
+            <point key="canvasLocation" x="306" y="399"/>
+        </scene>
+        <!--Person Preview View Controller-->
+        <scene sceneID="Wd3-QM-EEe">
+            <objects>
+                <viewController id="kz0-ZP-9M7" customClass="TRIPersonPreviewViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="knM-h8-pn0">
+                        <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BvN-zK-gvD">
+                                <rect key="frame" x="0.0" y="0.0" width="140" height="128"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juC-GB-qoa">
+                                <rect key="frame" x="10" y="130" width="130" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VWO-x5-H5c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.97204466540404044" green="0.97204466540404044" blue="0.97204466540404044" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="juC-GB-qoa" secondAttribute="trailing" id="2zP-OG-j8q"/>
+                            <constraint firstItem="BvN-zK-gvD" firstAttribute="top" secondItem="knM-h8-pn0" secondAttribute="topMargin" id="7a0-Dw-XLm"/>
+                            <constraint firstItem="BvN-zK-gvD" firstAttribute="leading" secondItem="knM-h8-pn0" secondAttribute="leading" id="F99-46-4XF"/>
+                            <constraint firstItem="juC-GB-qoa" firstAttribute="leading" secondItem="knM-h8-pn0" secondAttribute="leading" constant="10" id="Na3-d2-pwN"/>
+                            <constraint firstItem="juC-GB-qoa" firstAttribute="top" secondItem="BvN-zK-gvD" secondAttribute="bottom" constant="2" id="ShF-Q2-UCH"/>
+                            <constraint firstAttribute="trailing" secondItem="BvN-zK-gvD" secondAttribute="trailing" id="lGv-zg-YhQ"/>
+                            <constraint firstAttribute="bottom" secondItem="juC-GB-qoa" secondAttribute="bottom" id="y9f-jr-9DY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="BvN-zK-gvD" id="Qao-QL-PGB"/>
+                        <outlet property="nameLabel" destination="juC-GB-qoa" id="qyR-rH-KhU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ue-Eb-Wmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="581" y="1006"/>
         </scene>
     </scenes>
 </document>
