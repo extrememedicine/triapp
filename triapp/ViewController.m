@@ -26,7 +26,16 @@
     self.containerView.layer.cornerRadius = 5;
     self.containerView.layer.masksToBounds = YES;
     
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentPersonDetail)];
+    singleTap.numberOfTapsRequired = 1;
+    [self.containerView addGestureRecognizer:singleTap];
+    
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)presentPersonDetail {
+    [self performSegueWithIdentifier:@"showPerson" sender:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +49,16 @@
         destVC.profilePicture = [UIImage imageNamed:@"128.jpg"];
         destVC.name = @"John Doe";
     }
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 @end

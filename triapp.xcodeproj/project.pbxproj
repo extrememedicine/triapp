@@ -17,6 +17,8 @@
 		4AA690781BDE35DE0036CFD9 /* 128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4AA690771BDE35DE0036CFD9 /* 128.jpg */; };
 		4AA6907B1BDE38A00036CFD9 /* TRIPersonPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA6907A1BDE38A00036CFD9 /* TRIPersonPreviewViewController.m */; };
 		4AA6907D1BDE3C4F0036CFD9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA6907C1BDE3C4F0036CFD9 /* QuartzCore.framework */; };
+		4AA690801BDE449A0036CFD9 /* TRIPersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA6907F1BDE449A0036CFD9 /* TRIPersonDetailViewController.m */; };
+		4AA690821BDE54480036CFD9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA690811BDE54480036CFD9 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,9 @@
 		4AA690791BDE38A00036CFD9 /* TRIPersonPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRIPersonPreviewViewController.h; sourceTree = "<group>"; };
 		4AA6907A1BDE38A00036CFD9 /* TRIPersonPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRIPersonPreviewViewController.m; sourceTree = "<group>"; };
 		4AA6907C1BDE3C4F0036CFD9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4AA6907E1BDE449A0036CFD9 /* TRIPersonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRIPersonDetailViewController.h; sourceTree = "<group>"; };
+		4AA6907F1BDE449A0036CFD9 /* TRIPersonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRIPersonDetailViewController.m; sourceTree = "<group>"; };
+		4AA690811BDE54480036CFD9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		65369D046A308247A349069B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F9A54DE69B3B0E2659A9401E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA690821BDE54480036CFD9 /* MapKit.framework in Frameworks */,
 				4AA6907D1BDE3C4F0036CFD9 /* QuartzCore.framework in Frameworks */,
 				2DE2764036CE3402B35CA105 /* libPods.a in Frameworks */,
 			);
@@ -89,6 +95,8 @@
 				4AA690601BDE2DCC0036CFD9 /* ViewController.h */,
 				4AA690611BDE2DCC0036CFD9 /* ViewController.m */,
 				4AA690631BDE2DCC0036CFD9 /* Main.storyboard */,
+				4AA6907E1BDE449A0036CFD9 /* TRIPersonDetailViewController.h */,
+				4AA6907F1BDE449A0036CFD9 /* TRIPersonDetailViewController.m */,
 				4AA690661BDE2DCC0036CFD9 /* Assets.xcassets */,
 				4AA690681BDE2DCC0036CFD9 /* LaunchScreen.storyboard */,
 				4AA6906B1BDE2DCC0036CFD9 /* Info.plist */,
@@ -109,6 +117,7 @@
 		A06A13EA436A47C25D0B3A52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AA690811BDE54480036CFD9 /* MapKit.framework */,
 				4AA6907C1BDE3C4F0036CFD9 /* QuartzCore.framework */,
 				030F70F9372E88B1E6657CA5 /* libPods.a */,
 			);
@@ -221,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA690801BDE449A0036CFD9 /* TRIPersonDetailViewController.m in Sources */,
 				4AA6907B1BDE38A00036CFD9 /* TRIPersonPreviewViewController.m in Sources */,
 				4AA690621BDE2DCC0036CFD9 /* ViewController.m in Sources */,
 				4AA6905F1BDE2DCC0036CFD9 /* AppDelegate.m in Sources */,
