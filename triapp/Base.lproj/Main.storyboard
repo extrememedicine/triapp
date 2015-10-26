@@ -37,6 +37,9 @@
                                     <constraint firstAttribute="width" constant="100" id="sgU-nP-tWu"/>
                                 </constraints>
                                 <state key="normal" title="Add a person"/>
+                                <connections>
+                                    <segue destination="PPA-TY-Q7P" kind="show" id="Kg1-tQ-BpO"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54U-DV-bcf">
                                 <rect key="frame" x="20" y="124" width="140" height="180"/>
@@ -58,6 +61,9 @@
                                     <constraint firstAttribute="height" constant="180" id="rj1-NX-jnP"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="vLX-r1-0Ix"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="kz0-ZP-9M7" kind="embed" identifier="embedPicture" id="o3X-SX-QVK"/>
+                                </connections>
                             </containerView>
                         </subviews>
                         <animations/>
@@ -243,20 +249,13 @@ Doe</string>
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJQ-BD-2UF">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJQ-BD-2UF">
                                             <rect key="frame" x="18" y="135.5" width="574" height="56"/>
                                             <animations/>
-                                            <attributedString key="attributedText">
-                                                <fragment>
-                                                    <string key="content">- Visited Irbid camp on 25/10/2015, had medical check up and was marked all-clear
+                                            <string key="text">- Visited Irbid camp on 25/10/2015, had medical check up and was marked all-clear
 - Had Diarrhoea for 10 days between 8/10/2015 and 18/10/2015</string>
-                                                    <attributes>
-                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <font key="NSFont" size="16" name="HelveticaNeue"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="Recent log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yh-ex-NiB">
@@ -344,7 +343,26 @@ Doe</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ue-Eb-Wmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="581" y="1006"/>
+            <point key="canvasLocation" x="731" y="1046"/>
+        </scene>
+        <!--New person-->
+        <scene sceneID="nJ2-YW-pbg">
+            <objects>
+                <viewController title="New person" id="PPA-TY-Q7P" customClass="TRINewPersonViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wrC-aB-GwE"/>
+                        <viewControllerLayoutGuide type="bottom" id="g9A-d5-F7k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rh1-Bf-vJf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xt4-ba-GBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438" y="1378"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NJP-ws-OXo">
@@ -369,4 +387,7 @@ Doe</string>
     <resources>
         <image name="128.jpg" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="o3X-SX-QVK"/>
+    </inferredMetricsTieBreakers>
 </document>

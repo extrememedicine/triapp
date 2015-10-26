@@ -23,8 +23,11 @@
     
     [self.tableView dequeueReusableCellWithIdentifier:@"simpleHeaded"];
     
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    
     _cellLayout = @[
-                    @{@"header":@"Date of birth",  @"text":@"5/7/1987 (age 28)"},
+                    @{@"header":@"Date of birth",  @"text":[formatter stringFromDate:self.person.dob]},
                     @{@"header":@"Sex",  @"text":self.person.sex},
                     @{@"header":@"Height",  @"text":self.person.height},
                     @{@"header":@"Weight", @"text":self.person.weight},
@@ -93,12 +96,16 @@
         UITableViewCell *cell;
         NSUInteger diff = indexPath.row - self.cellLayout.count;
         switch (diff) {
-            case 0:
+            case 0: {
                 cell = [tableView dequeueReusableCellWithIdentifier:@"LongHeadedAttributed" forIndexPath:indexPath];
+                UILabel *descriptionLabel = (UILabel*)[cell viewWithTag:2];
+                descriptionLabel.text = self.person.recentLog;
                 break;
-            case 1:
+            }
+            case 1: {
                 cell = [tableView dequeueReusableCellWithIdentifier:@"Location" forIndexPath:indexPath];
                 break;
+            }
         }
         
         return cell;

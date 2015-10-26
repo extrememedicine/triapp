@@ -37,22 +37,33 @@
         singleTap.numberOfTapsRequired = 1;
         [containerView addGestureRecognizer:singleTap];
     }
-    
+
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)presentPersonDetail: (UIGestureRecognizer*)gesture {
-    __block TRIPersonPreviewViewController *destVC = nil;
-    [self.containerVCs enumerateObjectsUsingBlock:^(TRIPersonPreviewViewController *obj, NSUInteger idx, BOOL *stop) {
-        if (obj.view == gesture.view) {
-            *stop = YES;
-            destVC = obj;
+- (void)loadPeople {
+    PFQuery *query = [PFQuery queryWithClassName:@"TRIPerson"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        NSUInteger i = 0;
+        for (TRIPerson *person in objects) {
+            if (i >= self.containerVCs.count) break;
+            [(TRIPersonPreviewViewController*)self.containerVCs[i] setPerson:person];
+            i++;
+        }
+        for (; i < self.containerVCs.count; i++) {
+            [(TRIPersonPreviewViewController*)self.containerVCs[i] setPerson:nil];
         }
     }];
+}
 
-    destVC = _containerVCs[0];
+- (void)presentPersonDetail: (UIGestureRecognizer*)gesture {
+    NSUInteger index = [@[self.containerView, self.containerViewB] indexOfObject:gesture.view];
     
-    [self performSegueWithIdentifier:@"showPerson" sender:destVC.person];
+
+    TRIPersonPreviewViewController *sourceVC = _containerVCs[index];
+    
+    [self performSegueWithIdentifier:@"showPerson" sender:sourceVC.person];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,14 +78,6 @@
     if ([segue.identifier isEqualToString:@"embedPicture"]) {
         TRIPersonPreviewViewController *destVC = (TRIPersonPreviewViewController*)segue.destinationViewController;
         [self.containerVCs addObject:destVC];
-        TRIPerson *person = [TRIPerson object];
-        person.name = @"dat Harry Doe";
-        person.sex = @"Male";
-        person.height = @"184cm";
-        person.weight = @"65kg";
-        person.reportedConditions = @"None";
-        person.pastConditions = @"Diarrhoea";
-        destVC.person = person;
     } else if ([segue.identifier isEqualToString:@"showPerson"]) {
         TRIPersonDetailViewController *destVC = (TRIPersonDetailViewController*)segue.destinationViewController;
         destVC.person = sender;
@@ -83,6 +86,8 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self loadPeople];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 

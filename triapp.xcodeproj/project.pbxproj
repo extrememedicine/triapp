@@ -20,6 +20,7 @@
 		4AA690801BDE449A0036CFD9 /* TRIPersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA6907F1BDE449A0036CFD9 /* TRIPersonDetailViewController.m */; };
 		4AA690821BDE54480036CFD9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA690811BDE54480036CFD9 /* MapKit.framework */; };
 		4AA690851BDE66540036CFD9 /* TRIPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA690841BDE66540036CFD9 /* TRIPerson.m */; };
+		4AA690881BDE70600036CFD9 /* TRINewPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA690871BDE70600036CFD9 /* TRINewPersonViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		4AA690811BDE54480036CFD9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4AA690831BDE66540036CFD9 /* TRIPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRIPerson.h; sourceTree = "<group>"; };
 		4AA690841BDE66540036CFD9 /* TRIPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRIPerson.m; sourceTree = "<group>"; };
+		4AA690861BDE70600036CFD9 /* TRINewPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRINewPersonViewController.h; sourceTree = "<group>"; };
+		4AA690871BDE70600036CFD9 /* TRINewPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRINewPersonViewController.m; sourceTree = "<group>"; };
 		65369D046A308247A349069B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F9A54DE69B3B0E2659A9401E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +103,8 @@
 				4AA690831BDE66540036CFD9 /* TRIPerson.h */,
 				4AA690841BDE66540036CFD9 /* TRIPerson.m */,
 				4AA690631BDE2DCC0036CFD9 /* Main.storyboard */,
+				4AA690861BDE70600036CFD9 /* TRINewPersonViewController.h */,
+				4AA690871BDE70600036CFD9 /* TRINewPersonViewController.m */,
 				4AA6907E1BDE449A0036CFD9 /* TRIPersonDetailViewController.h */,
 				4AA6907F1BDE449A0036CFD9 /* TRIPersonDetailViewController.m */,
 				4AA690661BDE2DCC0036CFD9 /* Assets.xcassets */,
@@ -238,6 +243,7 @@
 				4AA690801BDE449A0036CFD9 /* TRIPersonDetailViewController.m in Sources */,
 				4AA6907B1BDE38A00036CFD9 /* TRIPersonPreviewViewController.m in Sources */,
 				4AA690851BDE66540036CFD9 /* TRIPerson.m in Sources */,
+				4AA690881BDE70600036CFD9 /* TRINewPersonViewController.m in Sources */,
 				4AA690621BDE2DCC0036CFD9 /* ViewController.m in Sources */,
 				4AA6905F1BDE2DCC0036CFD9 /* AppDelegate.m in Sources */,
 				4AA6905C1BDE2DCC0036CFD9 /* main.m in Sources */,

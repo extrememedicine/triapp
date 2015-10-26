@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.nameLabel.text = self.person.name;
     self.imageView.image = [UIImage imageNamed:@"128.jpg"];
     // Do any additional setup after loading the view.
 }
@@ -31,8 +30,15 @@
 
 - (void)setPerson:(TRIPerson *)person {
     _person = person;
-    self.nameLabel.text = self.person.name;
-    self.imageView.image = [UIImage imageNamed:@"128.jpg"];
+    if (person == nil) {
+        self.view.layer.opacity = 0;
+        self.imageView.image = nil;
+    } else {
+        self.view.layer.opacity = 1;
+    }
+    self.nameLabel.text = person.name;
+    
+    
 }
 
 /*
